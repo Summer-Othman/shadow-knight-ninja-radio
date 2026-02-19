@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shadow Knight Ninja – Pirate Broadcast Portal</title>
+
+<style>
+/* BODY & FONT */
+body {
+    margin: 0;
+    background: #000;
+    font-family: "Courier New", monospace;
+    color: #00ffcc;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* HEADER */
+header {
+    padding: 30px 20px 10px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+    margin: 0;
+    text-shadow: 0 0 10px #00ffcc;
+}
+
+.tagline {
+    color: #aaa;
+    margin-top: 10px;
+}
+
+/* ON AIR BLINKING LIGHT */
+.on-air {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    font-weight: bold;
+    color: red;
+}
+
+.blink {
+    width: 14px;
+    height: 14px;
+    background: red;
+    border-radius: 50%;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%,100% {opacity: 1;}
+    50% {opacity: 0.2;}
+}
+
+/* ENTER BROADCAST BUTTON */
+.broadcast-btn {
+    display: inline-block;
+    margin: 50px auto;
+    padding: 25px 50px;
+    font-size: 1.8rem;
+    color: #00ffcc;
+    text-decoration: none;
+    border: 3px solid #00ffcc;
+    border-radius: 15px;
+    text-shadow: 0 0 10px #00ffcc;
+    transition: all 0.3s ease;
+}
+
+.broadcast-btn:hover {
+    background: #00ffcc;
+    color: #000;
+    box-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc inset;
+}
+
+/* SIGNAL BAR ANIMATION */
+.signal {
+    width: 200px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bar {
+    width: 20px;
+    background: #00ffcc;
+    animation: pulse 1.2s infinite ease-in-out;
+}
+
+.bar:nth-child(1){height:20px; animation-delay:0s;}
+.bar:nth-child(2){height:30px; animation-delay:0.2s;}
+.bar:nth-child(3){height:40px; animation-delay:0.4s;}
+.bar:nth-child(4){height:30px; animation-delay:0.6s;}
+.bar:nth-child(5){height:20px; animation-delay:0.8s;}
+
+@keyframes pulse {
+    0%,100% {opacity: 0.3;}
+    50% {opacity: 1;}
+}
+
+/* TICKER */
+.ticker {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 800px;
+    overflow: hidden;
+    white-space: nowrap;
+    border-top: 1px solid #00ffcc;
+    border-bottom: 1px solid #00ffcc;
+    padding: 10px 0;
+}
+
+.ticker span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll 15s linear infinite;
+}
+
+@keyframes scroll {
+    from {transform: translateX(0);}
+    to {transform: translateX(-100%);}
+}
+
+/* CLOCK */
+.clock {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #00ffcc;
+}
+
+/* ARCHIVE */
+.archive {
+    max-height: 300px;
+    overflow-y: auto;
+    margin: 40px auto;
+    padding: 10px;
+    width: 90%;
+    max-width: 600px;
+    border: 1px solid #00ffcc;
+    text-align: left;
+    color: #00ffcc;
+    background: rgba(0,0,0,0.2);
+    font-size: 0.9rem;
+}
+
+.archive h2 {
+    text-align: center;
+    margin-top: 0;
+}
+
+.archive a {
+    color: #00ffcc;
+    text-decoration: none;
+}
+
+.archive a:hover {
+    text-decoration: underline;
+}
+
+/* FOOTER */
+footer {
+    margin: 40px 0;
+    font-size: 0.8rem;
+    color: #555;
+}
+
+/* SCANLINES EFFECT */
+body::after {
+    content: "";
+    pointer-events: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(0,255,200,0.03),
+        rgba(0,255,200,0.03) 2px,
+        transparent 2px,
+        transparent 4px
+    );
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>SHADOW KNIGHT NINJA</h1>
+    <div class="tagline">Pirate Signal Broadcasting Worldwide</div>
+    <div class="on-air">
+        <div class="blink"></div>
+        ON AIR
+    </div>
+    <div class="clock" id="clock"></div>
+</header>
+
+<!-- BIG ENTER BROADCAST BUTTON -->
+<a href="https://www.youtube.com/playlist?list=PLpr1NRjteE8ebqFBcoZhT4UzUVUi6E3H-" 
+   class="broadcast-btn" 
+   target="_blank" 
+   rel="noopener noreferrer">
+   ENTER BROADCAST
+</a>
+
+<!-- SIGNAL BAR -->
+<div class="signal">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker">
+    <span>Now Transmitting: Underground Frequencies • Midnight Signal • Shadow Knight Ninja Pirate Broadcast • Stay Tuned • </span>
+</div>
+
+<!-- ARCHIVE SECTION -->
+<div class="archive">
+    <h2>Previous Broadcasts</h2>
+    <ul>
+
+<li><strong>2026-02-19:</strong> <a href="https://www.youtube.com/playlist?list=PLpr1NRjteE8ebqFBcoZhT4UzUVUi6E3H-" target="_blank">Playlist 1</a></li>
+
+        <!-- 
+        Add old playlists manually here. Copy this template:
+        <li><strong>YYYY-MM-DD:</strong> <a href="PLAYLIST_URL" target="_blank">Playlist Name</a></li>
+        Example:
+        <li><strong>2026-02-10:</strong> <a href="https://www.youtube.com/playlist?list=PLoldplaylist1" target="_blank">Playlist 1</a></li>
+        Paste each old playlist above this comment.
+        -->
+    </ul>
+</div>
+
+<footer>
+    Unauthorized frequencies detected. Transmission encrypted.
+</footer>
+
+<script>
+// CLOCK UPDATE
+function updateClock() {
+    const now = new Date();
+    document.getElementById("clock").innerHTML =
+        "System Time: " + now.toLocaleTimeString();
+}
+setInterval(updateClock, 1000);
+updateClock();
+</script>
+
+</body>
+</html>
